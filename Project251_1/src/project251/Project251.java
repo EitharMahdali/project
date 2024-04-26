@@ -11,9 +11,7 @@ public class Project251 {
     
     public static void main(String[] args) {
   
-        User u = new User("2134142222","Ajhgdju7");
-        u.AddUser("2134142222","Ajhgdju7");
-        u.Login("2134142222","Ajhgdju7");
+        System.out.println("Eithar");
     }
     
 }
