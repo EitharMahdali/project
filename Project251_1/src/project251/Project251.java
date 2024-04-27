@@ -11,7 +11,8 @@ public class Project251 {
     
     public static void main(String[] args) {
   
-        System.out.println("Eitjijhar");
+        Course c=new Course();
+        c.SelectCoures();
     }
     
 }
