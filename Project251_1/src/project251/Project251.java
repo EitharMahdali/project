@@ -11,8 +11,9 @@ public class Project251 {
     
     public static void main(String[] args) {
   
-        Course c=new Course();
-        c.SelectCoures();
+        Experiment c=new Experiment();
+        c.selectexperiment();
+       
     }
     
 }
