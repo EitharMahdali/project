@@ -42,18 +42,21 @@ class Experiment {
     return this.exinstruction;
   }
   
-  public void selectexperiment(){
-     
-     
-      for (int i = 0; i < ExperimentName.length; i++) {
-          System.out.println(ExperimentName[i]);
+  public static String selectexperiment(String[] experimentNames) {
+        
+        System.out.println("Available experiments:");
+        for (String name : experimentNames) {
+            System.out.println(name);
         }
-        Scanner n = new Scanner(System.in);
-        System.out.println("select experiment");
-        String experiment = n.nextLine();
-        switch (experiment.toLowerCase()) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select an experiment:");
+        String selectedExperiment = scanner.nextLine();
+
+        
+        switch (selectedExperiment.toLowerCase()) {
             case "simple substitution reactions":
-                System.out.println("Steps:\n"
+                return "Steps:\n"
                         + "Choose suitable reactants for substitution (e.g., metal and salt solution).\n"
                         + "Prepare reactants and equipment.\n"
                         + "Mix reactants in proper molar ratios.\n"
@@ -63,10 +66,9 @@ class Experiment {
                         + "Wear lab coat, gloves, and safety goggles.\n"
                         + "Handle chemicals with care to avoid spills.\n"
                         + "Work in a well-ventilated area.\n"
-                        + "Dispose of waste properly.");
-                break;
+                        + "Dispose of waste properly.";
             case "molar ratios":
-                System.out.println("Steps:\n"
+                return "Steps:\n"
                         + "Determine the balanced chemical equation for the reaction.\n"
                         + "Weigh the reactants accurately.\n"
                         + "Convert reactant masses to moles.\n"
@@ -75,10 +77,9 @@ class Experiment {
                         + "Safety Information:\n"
                         + "Follow general lab safety protocols.\n"
                         + "Use proper PPE including gloves and goggles.\n"
-                        + "Handle chemicals according to safety data sheets (SDS).");
-                break;
+                        + "Handle chemicals according to safety data sheets (SDS).";
             case "reaction heat":
-                System.out.println("Steps:\n"
+                return "Steps:\n"
                         + "Set up a calorimeter with a reaction vessel, thermometer, and insulation.\n"
                         + "Prepare reactants and measure initial temperature.\n"
                         + "Mix reactants in the calorimeter and record temperature changes.\n"
@@ -86,10 +87,9 @@ class Experiment {
                         + "Safety Information:\n"
                         + "Use caution with hot materials and heating devices.\n"
                         + "Avoid direct skin contact with hot surfaces.\n"
-                        + "Work in a controlled environment to prevent accidents.");
-                break;
+                        + "Work in a controlled environment to prevent accidents.";
             case "polymerization reactions":
-                System.out.println("Steps:\n"
+                return "Steps:\n"
                         + "Choose monomers and catalysts for polymerization.\n"
                         + "Prepare monomers and reaction setup.\n"
                         + "Initiate polymerization using heat, light, or catalysts.\n"
@@ -98,10 +98,9 @@ class Experiment {
                         + "Safety Information:\n"
                         + "Handle monomers and catalysts according to safety guidelines.\n"
                         + "Use appropriate PPE such as gloves and lab coat.\n"
-                        + "Ensure proper ventilation during the reaction.");
-                break;
+                        + "Ensure proper ventilation during the reaction.";
             case "covalent bonds in medicines":
-                System.out.println("Steps:\n"
+                return "Steps:\n"
                         + "Select drugs or compounds with covalent bonds for analysis.\n"
                         + "Prepare samples and equipment for analysis.\n"
                         + "Use analytical techniques (e.g., mass spectrometry) to study covalent bonds.\n"
@@ -109,13 +108,10 @@ class Experiment {
                         + "Safety Information:\n"
                         + "Follow lab safety protocols for handling chemicals and equipment.\n"
                         + "Use analytical instruments under supervision if necessary.\n"
-                        + "Dispose of samples and waste properly.");
-                break;
-        default:
-                System.out.println("Invalid Please try again.");
-                
+                        + "Dispose of samples and waste properly.";
+            default:
+                return "Invalid selection. Please try again.";
         }
-
     }
 
   

@@ -10,10 +10,8 @@ public class Project251 {
 
     
     public static void main(String[] args) {
-  
-        Experiment c=new Experiment();
-        c.selectexperiment();
-       
+ 
+ 
     }
     
 }
