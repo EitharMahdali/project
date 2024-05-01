@@ -42,10 +42,10 @@ class Experiment {
     return this.exinstruction;
   }
   
-  public static String selectexperiment(String[] experimentNames) {
-        
+  public static String selectexperiment() {
+        String [] ExperimentName={"Simple Substitution Reactions","Molar Ratios","reaction heat","Polymerization reactions","Covalent Bonds in Medicines"};
         System.out.println("Available experiments:");
-        for (String name : experimentNames) {
+        for (String name : ExperimentName) {
             System.out.println(name);
         }
 

@@ -5,6 +5,8 @@
  */
 package project251;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -38,9 +40,11 @@ public class ExperimentTest {
     public void tearDown() {
     }
 
-  
+    @Test
     public void testSelectExperiment_ValidInput_SimpleSubstitutionReactions() {
-        String[] experiments = {"Simple Substitution Reactions", "Molar Ratios", "Reaction Heat", "Polymerization Reactions", "Covalent Bonds in Medicines"};
+        String input = "simple substitution reactions";
+        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
         String expectedResult = "Steps:\n"
                 + "Choose suitable reactants for substitution (e.g., metal and salt solution).\n"
                 + "Prepare reactants and equipment.\n"
@@ -53,14 +57,17 @@ public class ExperimentTest {
                 + "Work in a well-ventilated area.\n"
                 + "Dispose of waste properly.";
 
-        String actualResult = instance.selectexperiment(experiments);
+        String actualResult = instance.selectexperiment();
 
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testSelectExperiment_ValidInput_MolarRatios() {
-        String[] experiments = {"Simple Substitution Reactions", "Molar Ratios", "Reaction Heat", "Polymerization Reactions", "Covalent Bonds in Medicines"};
+        
+        String input = "molar ratios";
+        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
         String expectedResult = "Steps:\n"
                 + "Determine the balanced chemical equation for the reaction.\n"
                 + "Weigh the reactants accurately.\n"
@@ -72,10 +79,11 @@ public class ExperimentTest {
                 + "Use proper PPE including gloves and goggles.\n"
                 + "Handle chemicals according to safety data sheets (SDS).";
 
-        String actualResult = instance.selectexperiment(experiments);
+        String actualResult = instance.selectexperiment();
 
         assertEquals(expectedResult, actualResult);
     }
+
 
     
 
