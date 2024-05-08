@@ -113,7 +113,104 @@ class Experiment {
                 return "Invalid selection. Please try again.";
         }
     }
+  
+public static void gradeExperiment(String selectedExperiment){
+      String[] experimentNames = {"simple substitution reactions", "molar ratios", "reaction heat", "polymerization reactions", "covalent bonds in medicines"};
+        int[] grades = new int[experimentNames.length];
+        
+       switch (selectedExperiment.toLowerCase()) {
+            case "simple substitution reactions":
+                evaluateAndGrade(getExperimentSteps(0, 5), 5, 0);
+                break;
+            case "molar ratios":
+                evaluateAndGrade(getExperimentSteps(1, 5), 5, 1);
+                break;
+            case "reaction heat":
+                evaluateAndGrade(getExperimentSteps(2, 4), 4, 2);
+                break;
+            case "polymerization reactions":
+                evaluateAndGrade(getExperimentSteps(3, 5), 5, 3);
+                break;
+            case "covalent bonds in medicines":
+                evaluateAndGrade(getExperimentSteps(4, 4), 4, 4);
+                break;
+            default:
+                System.out.println("Invalid selection. Please try again.");
+                return;
+        }
+    }
 
+public static void evaluateAndGrade(String[] correctSteps, int numSteps, int index) {
+     String[] experimentNames = {"simple substitution reactions", "molar ratios", "reaction heat", "polymerization reactions", "covalent bonds in medicines"};
+        int[] grades = new int[experimentNames.length];
+        Scanner scanner = new Scanner(System.in);
+        int correctCount = 0;
+        
+        System.out.println("Enter the experiment steps for " + experimentNames[index] + ":");
+        for (int i = 0; i < numSteps; i++) {
+            System.out.println("Step " + (i + 1) + ":");
+            String studentStep = scanner.nextLine();
+            if (studentStep.equalsIgnoreCase(correctSteps[i])) {
+                correctCount++;
+            }
+        }
+        
+        // Calculate grade and store in the grades array
+        grades[index] = (int) Math.round((double) correctCount / numSteps * 100);
+        System.out.println("Grade for " + experimentNames[index] + ": " + grades[index] + "%");
+    }
+    
+    // Method to get correct steps for an experiment
+    public static String[] getExperimentSteps(int index, int numSteps) {
+        switch (index) {
+            case 0:
+                return new String[]{
+                        "Choose suitable reactants for substitution (e.g., metal and salt solution).",
+                        "Prepare reactants and equipment.",
+                        "Mix reactants in proper molar ratios.",
+                        "Observe color changes or precipitate formation, indicating the reaction.",
+                        "Filter and wash the product if necessary."
+                };
+            case 1:
+                return new String[]{
+                        "Determine the balanced chemical equation for the reaction.",
+                        "Weigh the reactants accurately.",
+                        "Convert reactant masses to moles.",
+                        "Determine molar ratios based on the balanced equation.",
+                        "Combine reactants in proper ratios and perform the reaction."
+                };
+            case 2:
+                return new String[]{
+                        "Set up a calorimeter with a reaction vessel, thermometer, and insulation.",
+                        "Prepare reactants and measure initial temperature.",
+                        "Mix reactants in the calorimeter and record temperature changes.",
+                        "Calculate heat change (∆H) using calorimeter's heat capacity."
+                };
+            case 3:
+                return new String[]{
+                        "Choose monomers and catalysts for polymerization.",
+                        "Prepare monomers and reaction setup.",
+                        "Initiate polymerization using heat, light, or catalysts.",
+                        "Monitor reaction progress (e.g., viscosity changes).",
+                        "Purify and characterize the polymer product."};
+            case 4:
+                return new String[]{
+                        "Select drugs or compounds with covalent bonds for analysis.",
+                        "Prepare samples and equipment for analysis.",
+                        "Use analytical techniques (e.g., mass spectrometry) to study covalent bonds.",
+                        "Interpret data to understand drug structure and interactions."
+                };
+            default:
+                return new String[numSteps];
+        }
+    }
+    
+    // Method to retrieve grades array
+    public int[] getGrades() {
+         String[] experimentNames = {"simple substitution reactions", "molar ratios", "reaction heat", "polymerization reactions", "covalent bonds in medicines"};
+        int[] grades = new int[experimentNames.length];
+        return grades;
+    }
   
 
 }
