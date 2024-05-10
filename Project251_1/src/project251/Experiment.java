@@ -206,7 +206,7 @@ public static void evaluateAndGrade(String[] correctSteps, int numSteps, int ind
     }
     
     // Method to retrieve grades array
-    public int[] getGrades() {
+    public static int[] getGrades() {
          String[] experimentNames = {"simple substitution reactions", "molar ratios", "reaction heat", "polymerization reactions", "covalent bonds in medicines"};
         int[] grades = new int[experimentNames.length];
         return grades;
