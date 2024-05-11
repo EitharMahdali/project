@@ -56,6 +56,17 @@ class Experiment {
         
         switch (selectedExperiment.toLowerCase()) {
             case "simple substitution reactions":
+                System.out.print("\nExperiment Steps:\n"
+                        + "Choose suitable reactants for substitution (e.g., metal and salt solution).\n"
+                        + "Prepare reactants and equipment.\n"
+                        + "Mix reactants in proper molar ratios.\n"
+                        + "Observe color changes or precipitate formation, indicating the reaction.\n"
+                        + "Filter and wash the product if necessary.\n"
+                        + "Safety Information:\n"
+                        + "Wear lab coat, gloves, and safety goggles.\n"
+                        + "Handle chemicals with care to avoid spills.\n"
+                        + "Work in a well-ventilated area.\n"
+                        + "Dispose of waste properly."); 
                 return "Steps:\n"
                         + "Choose suitable reactants for substitution (e.g., metal and salt solution).\n"
                         + "Prepare reactants and equipment.\n"
@@ -68,6 +79,16 @@ class Experiment {
                         + "Work in a well-ventilated area.\n"
                         + "Dispose of waste properly.";
             case "molar ratios":
+                System.out.print("\nExperiment Steps:\n"
+                        + "Determine the balanced chemical equation for the reaction.\n"
+                        + "Weigh the reactants accurately.\n"
+                        + "Convert reactant masses to moles.\n"
+                        + "Determine molar ratios based on the balanced equation.\n"
+                        + "Combine reactants in proper ratios and perform the reaction.\n"
+                        + "Safety Information:\n"
+                        + "Follow general lab safety protocols.\n"
+                        + "Use proper PPE including gloves and goggles.\n"
+                        + "Handle chemicals according to safety data sheets (SDS)."); 
                 return "Steps:\n"
                         + "Determine the balanced chemical equation for the reaction.\n"
                         + "Weigh the reactants accurately.\n"
@@ -79,6 +100,15 @@ class Experiment {
                         + "Use proper PPE including gloves and goggles.\n"
                         + "Handle chemicals according to safety data sheets (SDS).";
             case "reaction heat":
+                System.out.print("Steps:\n"
+                        + "Set up a calorimeter with a reaction vessel, thermometer, and insulation.\n"
+                        + "Prepare reactants and measure initial temperature.\n"
+                        + "Mix reactants in the calorimeter and record temperature changes.\n"
+                        + "Calculate heat change (∆H) using calorimeter's heat capacity.\n"
+                        + "Safety Information:\n"
+                        + "Use caution with hot materials and heating devices.\n"
+                        + "Avoid direct skin contact with hot surfaces.\n"
+                        + "Work in a controlled environment to prevent accidents."); 
                 return "Steps:\n"
                         + "Set up a calorimeter with a reaction vessel, thermometer, and insulation.\n"
                         + "Prepare reactants and measure initial temperature.\n"

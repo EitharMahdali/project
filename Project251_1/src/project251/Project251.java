@@ -10,8 +10,8 @@ public class Project251 {
 
     
     public static void main(String[] args) {
-    Teacher.viewStudentReport("John Doe");
- 
+    Experiment.selectexperiment();
+    
     }
     
 }
