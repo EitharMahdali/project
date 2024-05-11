@@ -10,11 +10,10 @@ public class Teacher {
     
     
     public static String viewStudentReport(String studentName) {
-
+    
         if (studentName != null) {
-            System.out.println("Student Name: " + studentName);
-            System.out.println("Experiment Grade: " + Experiment.getGrades());
-            return "Student Name: "+studentName+"\nExperiment Grade: "+Experiment.getGrades()+"\n";
+            System.out.println("Student Name: "+studentName+"\nExperiment Grade: "+Student.getStudentGrade());
+            return "Student Name: "+studentName+"\nExperiment Grade: "+Student.getStudentGrade();
             // Print other relevant student information here
         } else {
             System.out.println("Student with name " + studentName + " not found.");

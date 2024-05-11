@@ -144,52 +144,37 @@ public class ExperimentTest {
                                  "Filter and wash the product if necessary"};
         int numSteps = correctSteps.length;
         int index = 0; // Index for "simple substitution reactions"
-
         // Simulate user input
         ByteArrayInputStream in = new ByteArrayInputStream("Choose suitable reactants for substitution\nPrepare reactants and equipment\nMix reactants in proper molar ratios\nObserve color changes or precipitate formation\nFilter and wash the product if necessary\n".getBytes());
         System.setIn(in);
-
         // Redirect System.out to capture output
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-
         // Call the method to test
         Experiment.evaluateAndGrade(correctSteps, numSteps, index);
-
-
         System.setOut(System.out);
-
         String output = outContent.toString().trim();
-
-       
         assertTrue(output.contains("Grade for simple substitution reactions: "));
     }
      @Test
     public void testGradeExperiment_validInput() {
-
         String experimentName = "simple substitution reactions";
 
         // Simulate user input
         ByteArrayInputStream in = new ByteArrayInputStream("Choose suitable reactants for substitution\nPrepare reactants and equipment\nMix reactants in proper molar ratios\nObserve color changes or precipitate formation\nFilter and wash the product if necessary\n".getBytes());
         System.setIn(in);
-
         // Redirect System.out to capture output
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-
         Experiment.gradeExperiment(experimentName);
-
         System.setOut(System.out);
         String output = outContent.toString().trim();
-
-
         assertTrue(output.contains("Grade for simple substitution reactions: "));
     }
 
     @Test
     public void testGradeExperiment_invalidInput() {
         String experimentName = "invalid experiment";
-
         // Redirect System.out to capture output
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));

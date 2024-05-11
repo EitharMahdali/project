@@ -5,13 +5,12 @@
  */
 package project251;
 
-
+import java.util.Scanner;
 public class Project251 {
 
     
     public static void main(String[] args) {
-    Experiment.selectexperiment();
-    
+    Teacher.viewStudentReport("John Doe");
     }
     
 }

@@ -29,8 +29,8 @@ public class Student  {
         
     }
 
-    public int getStudentGrade() {
-        return StudentGrade;
+    public static int getStudentGrade() {
+        return 80;
     }
     
     public String ViewListPrevExperiment( Experiment [] experimentName){

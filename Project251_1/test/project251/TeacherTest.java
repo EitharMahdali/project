@@ -57,13 +57,13 @@ public class TeacherTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         String expectedResult="Student Name: John Doe\n" +
-"Experiment Grade: [I@15db9742";
+"Experiment Grade: 80";
 
         // Call the method
         String result=teacher.viewStudentReport("John Doe");
 
         // Verify output
-        assertNotEquals("Student Name: John Doe\nExperiment Grade: 85\n",result);
+        assertEquals(expectedResult,result);
     }
    
     

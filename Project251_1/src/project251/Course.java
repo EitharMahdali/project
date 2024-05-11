@@ -40,7 +40,7 @@ class Course {
     public void setExperiment(String experiment) {
         this.experiment = experiment;
     } 
-    public String SelectCoures(){
+    public static String SelectCoures(){
         String [] Coures =  {"Chemistry1","Chemistry2","Chemistry3"};
         for (int i=0; i<3;i++){
             System.out.println(Coures[i]); 
