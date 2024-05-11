@@ -6,11 +6,18 @@
 package project251;
 
 public class Student  {
+    static String studentName;
     private int StudentGrade;
     private Experiment ConductsExperiment;
-   
-    
-    
+
+    public Student(String studentName, int StudentGrade) {
+        this.studentName = studentName;
+        this.StudentGrade = StudentGrade;
+    }
+
+    public static String getStudentName() {
+        return studentName;
+    }
  
     public String SelectCourse(Course [] CourseName){
         
