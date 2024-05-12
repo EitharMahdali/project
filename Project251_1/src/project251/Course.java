@@ -12,8 +12,30 @@ import java.util.Scanner;
  * @author bxbxz
  */
 class Course {
-    private String name;
+       private String name;
     private String experiment;
+
+
+    static String selectCourse() {
+       String [] Coures =  {"Chemistry1","Chemistry2","Chemistry3"};
+        for (int i=0; i<3;i++){
+            System.out.println(Coures[i]); 
+        } 
+        Scanner n = new Scanner(System.in);
+        System.out.println("Enter the Coures Level");
+        int choice = n.nextInt();
+        switch(choice){
+         case 1:
+            return "Chemistry1";
+        case 2:
+            return "Chemistry2";
+        case 3:
+         return "Chemistry3";
+        default:
+            System.out.println("Invalid choice. Please try again.");
+            return null;   
+    }
+    }
 
     public Course() {
     }
