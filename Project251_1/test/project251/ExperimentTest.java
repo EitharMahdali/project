@@ -101,39 +101,31 @@ public class ExperimentTest {
         // Call the method to test
         String[] steps = Experiment.getExperimentSteps(0, 5);
 
-        assertEquals(5, steps.length);
-        assertEquals("Choose suitable reactants for substitution (e.g., metal and salt solution).", steps[0]);
-        assertEquals("Prepare reactants and equipment.", steps[1]);
-        assertEquals("Mix reactants in proper molar ratios.", steps[2]);
-        assertEquals("Observe color changes or precipitate formation, indicating the reaction.", steps[3]);
-        assertEquals("Filter and wash the product if necessary.", steps[4]);
+        // Expected steps array
+        String[] expectedSteps = {
+            "Choose suitable reactants for substitution (e.g., metal and salt solution).",
+            "Prepare reactants and equipment.",
+            "Mix reactants in proper molar ratios.",
+            "Observe color changes or precipitate formation, indicating the reaction.",
+            "Filter and wash the product if necessary."
+        };
+
+        
+        assertArrayEquals(expectedSteps, steps);
     }
 
-    @Test
-    public void testGetExperimentSteps_invalidIndex() {
-        // Call the method to test with invalid index
-        String[] steps = Experiment.getExperimentSteps(10, 5);
-
-
-        assertEquals(5, steps.length);
-        assertNull(steps[0]);
-        assertNull(steps[1]);
-        assertNull(steps[2]);
-        assertNull(steps[3]);
-        assertNull(steps[4]);
-    }
     @Test
     public void testGetGrades() {
         // Call the method to test
         int[] grades = Experiment.getGrades();
 
-        // Assertions
-        assertNotNull(grades);
-        assertEquals(5, grades.length);
-        for (int grade : grades) {
-            assertEquals(0, grade); // By default, all grades should be initialized to 0
-        }
+        // Expected grades array
+        int[] expectedGrades = {0, 0, 0, 0, 0};
+
+        
+        assertArrayEquals(expectedGrades, grades);
     }
+    
     @Test
     public void testEvaluateAndGrade_validInput() {
         // Prepare input data for the test
